@@ -50,7 +50,7 @@ input[type="email"], input[type="text"], input[type="password"] {
   margin-bottom: 15px;
 }
 
-button {
+.container a {
   display: block;
   width: 100%;
   padding: 10px 20px;

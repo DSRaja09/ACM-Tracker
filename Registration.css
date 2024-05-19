@@ -8,7 +8,6 @@ body {
   h1 {
     text-align: center;
     color: #333;
-    margin-bottom: 20px;
   }
   
   form {
@@ -17,7 +16,16 @@ body {
     width: 300px;
     margin: 0 auto;
   }
-  
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 5px;
+    background-color: #fff; /* White container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
   .form-group {
     margin-bottom: 15px;
   }
