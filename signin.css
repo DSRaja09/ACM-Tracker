@@ -17,12 +17,12 @@ body {
 h1 {
   text-align: center;
   margin-bottom: 20px;
-  color: #333; /* Dark Gray heading */
+  color: #333; 
 }
 
 .form-wrapper {
   display: flex;
-  justify-content: center; /* Center the login form */
+  justify-content: center; 
 }
 
 .login-form {
