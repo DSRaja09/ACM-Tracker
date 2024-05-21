@@ -49,4 +49,29 @@ p {
   background-color: #43A047; 
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
 
+  .options {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  .options a {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+}
