@@ -6,7 +6,7 @@ body{
 }
 
 header {
-  background-color: #dcedc8; /* Light greenish-yellow */
+  background-color: #dcedc8; 
   padding: 20px;
   border-radius: 5px;
   margin-bottom: 20px;
@@ -28,8 +28,8 @@ h1 {
   margin: 50px auto;
   padding: 30px;
   border-radius: 5px;
-  background-color: #fff; /* White container */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #fff; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
 
@@ -46,30 +46,30 @@ form {
 
 label {
   font-weight: bold;
-  color: #20aa59 /* Darker greenish-brown */
+  color: #20aa59 
 }
 
 input[type="text"] {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 98%; /* Full width for each input */
-  margin-bottom: 10px; /* Add some margin for spacing */
+  width: 98%; 
+  margin-bottom: 10px;
 }
 input[type = "password"]{
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 98%; /* Full width for each input */
-  margin-bottom: 10px; /* Add some margin for spacing */
+  width: 98%; 
+  margin-bottom: 10px; 
 }
 
 button, a{
   display: block;
   width: 90%;
   padding: 10px 20px;
-  background-color: #2ECC71; /* Green button */
-  color: #fff; /* White button text */
+  background-color: #2ECC71; 
+  color: #fff; 
   border: none;
   border-radius: 3px;
   cursor: pointer;
@@ -77,5 +77,86 @@ button, a{
 
 
 button, a:hover {
-  background-color: #16b659; /* Darker green on hover */
+  background-color: #16b659; 
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  form {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  form {
+    width: 90%;
+    padding: 15px;
+  }
+
+  label {
+    font-size: 1em;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: 96%;
+    padding: 8px;
+  }
+
+  button, a {
+    width: 95%;
+    padding: 10px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+  .container {
+    width: 100%;
+    margin: 10px auto;
+    padding: 15px;
+  }
+
+  form {
+    width: 100%;
+    padding: 10px;
+  }
+
+  label {
+    font-size: 0.9em;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: 94%;
+    padding: 7px;
+  }
+
+  button, a {
+    width: 90%;
+    padding: 8px;
+    font-size: 0.9em;
+  }
 }

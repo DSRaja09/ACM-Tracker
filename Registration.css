@@ -57,18 +57,77 @@ input[type="submit"] {
   padding: 10px 20px;
   border: none;
   border-radius: 3px;
-  cursor: pointer; /* Indicate clickable state */
+  cursor: pointer; 
 }
 
 /* Link Styles */
 a {
-  color: #2e8b57; /* Green color for links */
-  text-decoration: none; /* Remove underline from links */
+  color: #2e8b57; 
+  text-decoration: none; 
 }
 
-/* Copyright Styles */
 .copywrite {
-  text-align: center; /* Center the copyright text */
-  margin-top: 30px; /* Add some margin above the copyright */
-  color: #aaa; /* Light gray for copyright text */
+  text-align: center; 
+  margin-top: 30px;
+  color: #aaa; 
+}
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .container {
+    width: 60%;
+    padding: 20px;
+  }
+
+  .text,
+  .email {
+    width: 90%;
+  }
+
+  input[type="submit"] {
+    width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 80%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .text,
+  .email {
+    width: 88%;
+  }
+
+  input[type="submit"] {
+    width: 92%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    margin: 0 10px;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .text,
+  .email {
+    width: 86%;
+    padding: 8px;
+  }
+
+  input[type="submit"] {
+    width: 90%;
+    padding: 8px;
+  }
 }

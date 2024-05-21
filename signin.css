@@ -2,7 +2,7 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5; /* Light Gray background */
+  background-color: #f5f5f5; 
 }
 
 .container {
@@ -10,8 +10,8 @@ body {
   margin: 50px auto;
   padding: 30px;
   border-radius: 5px;
-  background-color: #fff; /* White container */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #fff; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
 h1 {
@@ -33,19 +33,19 @@ h1 {
 h2 {
   text-align: center;
   margin-bottom: 10px;
-  color: #333; /* Dark Gray subheading */
+  color: #333; 
 }
 
 label {
   display: block;
   margin-bottom: 5px;
-  color: #333; /* Dark Gray label text */
+  color: #333; 
 }
 
 input[type="email"], input[type="text"], input[type="password"] {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc; /* Light Gray border */
+  border: 1px solid #ccc; 
   border-radius: 3px;
   margin-bottom: 15px;
 }
@@ -54,13 +54,74 @@ input[type="email"], input[type="text"], input[type="password"] {
   display: block;
   width: 100%;
   padding: 10px 20px;
-  background-color: #2ECC71; /* Green button */
-  color: #fff; /* White button text */
+  background-color: #2ECC71; 
+  color: #fff; 
   border: none;
   border-radius: 3px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #27AE60; /* Darker green on hover */
+  background-color: #27AE60; 
+}
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .container {
+    width: 70%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 80%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .login-form {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  input[type="email"], input[type="password"] {
+    padding: 8px;
+    font-size: 1em;
+  }
+
+  button {
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.6em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  input[type="email"], input[type="password"] {
+    padding: 7px;
+    font-size: 0.9em;
+  }
+
+  button {
+    padding: 7px 10px;
+    font-size: 0.9em;
+  }
 }

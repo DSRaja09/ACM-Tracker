@@ -115,3 +115,87 @@ a:hover {
   color: hsl(123, 41%, 45%);
   font-weight: bold;
 }
+@media (max-width: 1024px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .footer-section {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.75em;
+  }
+
+  header p {
+    font-size: 1.1em;
+  }
+
+  .options {
+    width: 90%;
+    margin: 0 auto;
+    gap: 15px;
+    padding: 10px;
+  }
+  
+  .options a {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+
+  .AboutUS, .footer-container, .footer-section {
+    padding: 0 15px;
+  }
+
+  .AboutUS {
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  header p {
+    font-size: 1em;
+  }
+
+  .options {
+    width: 100%;
+    padding: 10px;
+    gap: 10px;
+  }
+  
+  .options a {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+
+  footer {
+    font-size: 0.7em;
+  }
+
+  .footer-container {
+    width: 100%;
+  }
+
+  .AboutUS h2 {
+    font-size: 1.25em;
+  }
+
+  .AboutUS p {
+    font-size: 0.9em;
+  }
+}
