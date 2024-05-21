@@ -2,36 +2,39 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Registration Form</title>
-	<link rel="stylesheet" href="registration.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="registration.css">
 </head>
 
-<body><div class="container">
-	<h1>Register as Admin</h1>
-	<div class="form">
-		<div class="options">
-			<form action="register.php" method="post">
-				<input class="text" type="text" name="Username" placeholder="Name" required="">
-				<input class="text email" type="email" name="email" placeholder="Email" required="">
-				<input class="text" type="password" name="password" placeholder="Password" required="">
-				<div class="Conditions">
-					<label class="label_terms">
-						<input type="checkbox" class="checkbox" required="">
-						<span>I Agree To The Terms & Conditions</span>
-					</label>
-					<div class="clear"> </div>
-				</div>
-				<input type="submit" value="SIGNUP">
-			</form>
-			<p>Aready have an Account? <a href="signin.html"> Login Now!</a></p>
-		</div>
-	</div>
-	<!-- copyright -->
-	<div class="copywrite">
-		<p>© 2024 ACM Team Forming Platform. All rights reserved</p>
-<!-- //main -->
+<body>
+    <div class="container">
+        <h1>Register as Admin</h1>
+        <div class="form">
+            <div class="options">
+                <form action="http://localhost/acm/registration.php" method="post">
+                    <input class="text" type="text" name="username" placeholder="Username" required>
+                    <input class="text email" type="email" name="email" placeholder="Email" required>
+                    <input class="text" type="password" name="password" placeholder="Password" required>
+                    <div class="Conditions">
+                        <label class="label_terms">
+                            <input type="checkbox" class="checkbox" required>
+                            <span>I Agree To The Terms & Conditions</span>
+                        </label>
+                        <div class="clear"></div>
+                    </div>
+                    <input type="submit" value="SIGNUP">
+                </form>
+                <p>Already have an Account? <a href="Admin.html"> Login Now!</a></p>
+            </div>
+        </div>
+        <!-- copyright -->
+        <div class="copywrite">
+            <p>© 2024 ACM Team Forming Platform. All rights reserved</p>
+        </div>
+        <!-- //main -->
+    </div>
 </body>
 
 </html>

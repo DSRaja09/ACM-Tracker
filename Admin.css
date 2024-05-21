@@ -35,9 +35,8 @@ form {
   border: 1px solid #d7e8da;
   border-radius: 5px;
   background-color: #fff;
-  /* White container */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  /* Subtle shadow */
+  min-width: 300px;
 }
 
 h2 {
@@ -59,6 +58,7 @@ input[type="text"] {
   border-radius: 5px;
   width: 95%;
   margin-bottom: 10px;
+  min-width: 200px;
 }
 
 select,
@@ -68,6 +68,7 @@ input[type="number"] {
   border-radius: 5px;
   width: 60%;
   margin-bottom: 10px;
+  min-width: 150px;
 }
 
 #ok {
@@ -78,6 +79,7 @@ input[type="number"] {
   border-radius: 5px;
   height: 35px;
   width: 35px;
+  min-width: 35px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -96,6 +98,7 @@ button, a {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
+  min-width: 80px;
 }
 
 button:hover {
@@ -108,4 +111,50 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+
+@media (max-width: 600px) { 
+  body {
+    padding: 10px;
+  }
+
+  header {
+    padding: 10px;
+  }
+
+  form {
+    width: 100%;
+    padding: 10px;
+  }
+
+  button, a {
+    padding: 10px;
+  }
+  #ok{
+    width: 95%;
+  }
+  input[type="number"] {
+    width: 95%;
+  }
+}
+@media (max-width: 600px) { 
+  body {
+    padding: 10px;
+  }
+
+  header {
+    padding: 10px;
+  }
+
+  form {
+    width: 100%;
+    padding: 10px;
+  }
+
+  button, a {
+    padding: 10px;
+  }
+  input[type="number"] {
+    width: 95%;
+  }
 }

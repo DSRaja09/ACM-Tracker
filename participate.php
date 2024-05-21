@@ -30,8 +30,13 @@ try {
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Get form data
+<<<<<<< HEAD
     $name = $_POST['name'];
     $cf_handles = $_POST['cf_handles'];
+=======
+    $Name = $_POST['Name'];
+    $cf_handles = $_POST['CF_handles'];
+>>>>>>> 1c4c8b25c12ecb67589af62b5a00a9e6fa904907
 
     // Insert form data into the database
     try {
