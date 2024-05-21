@@ -4,40 +4,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Participate</title>
-  <link rel="stylesheet" href="Participate.css">
+  <title>participate</title>
+  <link rel="stylesheet" href="participate.css">
 </head>
 
 <body>
-  <!-- <header>
-    <h1>Participate</h1>
-  </header> -->
+  <header>
+    <h1>participate</h1>
+  </header>
   <main>
-    <div class="container">
-      <h1>Participate</h1>
-      <form id="participant-form">
-        <label for="contest-name"> TFC name:</label>
-        <input type="text" id="contest-name" name="contest-name" required>
-        <br>
-        <!-- <label for = "Password"> Password:</label>
+    <form action="http://localhost//acm/part.php" method="POST">
+      <!-- <label for = "Password"> Password:</label>
       <input type="password" id = "Password" name = "Password" required>
       <br> -->
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <!-- <br>
+      <label for="Name">Name:</label>
+      <input type="text" id="Name" Name="Name" required>
+      <!-- <br>
       <label for="vjudge-username">Vjudge Username:</label>
       <input type="text" id="vjudge-username" name="vjudge-username" required> -->
-        <br>
-        <label for="codeforces-handle">Codeforces Handle:</label>
-        <input type="text" id="codeforces-handle" name="codeforces-handle" required>
-        <br>
-        <!-- <label for="codechef-handle">Codechef Handle:</label>
+      <br>
+      <label for="CF_handles">CF_handles:</label>
+      <input type="text" id="CF_handles" name="CF_handles" required>
+      <br>
+      <!-- <label for="codechef-handle">Codechef Handle:</label>
       <input type="text" id="codechef-handle" name="codechef-handle" required>
       <br> -->
-        <a href="Dashboard.html">Submit</a>
-      </form>
-    </div>
+      <button type="submit">Submit</button>
+    </form>
   </main>
+
+  <script>
+    // Function to navigate to login page
+    function navigateToDashboard() {
+      window.location.href = "dashboard.html";
+    }
+
+    // Event listener for the login link
+    document.getElementById("dashboard").addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent default link behavior
+      navigateToDashboard(); // Call the navigation function
+    });
+  </script>
 </body>
 
 </html>
