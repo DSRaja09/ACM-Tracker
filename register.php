@@ -33,7 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Execute the statement
     if ($stmt->execute()) {
-        echo "Registration successful!";
+        //echo "Registration successful!";
+        header("Location: Admin.html");
     } else {
         echo "Error: " . $stmt->error;
     }
