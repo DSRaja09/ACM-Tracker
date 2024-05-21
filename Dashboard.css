@@ -48,3 +48,45 @@ th {
 .rank {
   color: #2e8b57; /* Dark green */
 }
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  header {
+    padding: 10px;
+    font-size: 1.2em;
+  }
+
+  table, th, td {
+    font-size: 0.9em;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2em;
+  }
+
+  h2 {
+    font-size: 1em;
+  }
+
+  table, th, td {
+    font-size: 0.8em;
+  }
+
+  th, td {
+    padding: 6px;
+  }
+
+  table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+}
