@@ -1,37 +1,36 @@
 <?php
-// Database configuration
-$servername = "localhost";
-$username = "root"; // Your database username
-$password = ""; // Your database password
-$dbname = "user_registration";
 
-// Create connection
+// Parameters for database connection
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "acm_tracker"; // Ensure your database name is correct
+
+// Create connection with the parameters
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+// Checking the connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form data
-    $name = $_POST['Username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+// Check if POST variables are set
+if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password'])) {
+    // Retrieve user input from the form
+    $Username = $_POST['username'];
+    $Email = $_POST['email'];
+    $Password = $_POST['password'];
 
-    // Validate form data (you can add more validation if necessary)
-    if (empty($name) || empty($email) || empty($password)) {
-        die("Please fill all fields.");
-    }
+    // Prepare SQL query to insert user data into the 'registration' table
+    $sql = "INSERT INTO registration (Username, Email, Password) VALUES (?, ?, ?)";
+    
+    // Prepare the statement
+    $stmt = $conn->prepare($sql);
+    if ($stmt) {
+        // Bind parameters
+        $stmt->bind_param("sss", $Username, $Email, $Password);
 
-    // Hash the password
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-    // Prepare and bind
-    $stmt = $conn->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $name, $email, $hashed_password);
-
-    // Execute the statement
+        // Execute the statement
     if ($stmt->execute()) {
         //echo "Registration successful!";
         header("Location: Admin.html");
