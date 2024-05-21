@@ -1,62 +1,74 @@
 body {
-    font-family: sans-serif;
-    background-color: #fff;
-    margin: 0;
-    padding: 20px;
-  }
-  
-  h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: 0 auto;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-  
-  button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    margin-top: 15px;
-  }
-  
-  button:hover {
-    background-color: #3e8e41;
-  }
-  
-  a {
-    color: #333;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
+  font-family: sans-serif;
+  background-color: #2ECC71; ;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Container Styles */
+.container {
+  width: 400px;
+  margin: 0 auto;
+  padding: 30px; 
+  border: 1px solid #ddd; 
+  border-radius: 5px; 
+}
+
+/* Header Styles */
+h1 {
+  text-align: center;
+  color: #f6f6f6; 
+  font-size: 24px; 
+  margin-bottom: 20px; 
+}
+
+/* Form Styles */
+.form {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* Form Input Styles */
+.text,
+.email {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc; 
+  border-radius: 3px;
+}
+
+/* Label Styles */
+.label_terms {
+  font-size: 12px;
+  color: #333;
+}
+
+/* Checkbox Styles */
+.checkbox {
+  margin-right: 5px;
+}
+
+/* Submit Button Styles */
+input[type="submit"] {
+  background-color: #2e8b57;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer; /* Indicate clickable state */
+}
+
+/* Link Styles */
+a {
+  color: #2e8b57; /* Green color for links */
+  text-decoration: none; /* Remove underline from links */
+}
+
+/* Copyright Styles */
+.copywrite {
+  text-align: center; /* Center the copyright text */
+  margin-top: 30px; /* Add some margin above the copyright */
+  color: #aaa; /* Light gray for copyright text */
+}

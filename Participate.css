@@ -1,5 +1,6 @@
-body {
+body{
   font-family: sans-serif;
+  background-color: #2ECC71;
   margin: 0;
   padding: 20px;
 }
@@ -15,30 +16,37 @@ header {
 h1 {
   font-size: 2em;
   margin: 0;
-  color: #397339; /* Darker greenish-brown */
+  color: #20aa59;
 }
 
-main {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 5px;
+  background-color: #fff; /* White container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
+
 
 form {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 400px; /* Adjust width as needed */
+  width: 400px;
   padding: 20px;
-  border: 1px solid #dcedc8; /* Light greenish-yellow border */
+  border: 1px solid #dcedc8; 
   border-radius: 5px;
-  background-color: #eaeedf; /* Lighter greenish-yellow */
+  background-color: #eaeedf;
 }
 
 label {
   font-weight: bold;
-  color: #397339; /* Darker greenish-brown */
+  color: #20aa59 /* Darker greenish-brown */
 }
 
 input[type="text"] {
@@ -56,18 +64,18 @@ input[type = "password"]{
   margin-bottom: 10px; /* Add some margin for spacing */
 }
 
-button, a {
-  background-color: #94d267; /* Light green */
-  color: white;
+button, a{
+  display: block;
+  width: 90%;
   padding: 10px 20px;
+  background-color: #2ECC71; /* Green button */
+  color: #fff; /* White button text */
   border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  text-align: center;
+  border-radius: 3px;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-button:hover {
-  background-color: #79b34d; /* Darker green on hover */
+
+button, a:hover {
+  background-color: #16b659; /* Darker green on hover */
 }
