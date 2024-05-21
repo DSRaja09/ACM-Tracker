@@ -15,28 +15,35 @@ if ($conn->connect_error) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data
-    $name = $_POST['Username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Validate form data (you can add more validation if necessary)
-    if (empty($name) || empty($email) || empty($password)) {
+    // Validate form data
+    if (empty($email) || empty($password)) {
         die("Please fill all fields.");
     }
 
-    // Hash the password
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
     // Prepare and bind
-    $stmt = $conn->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $name, $email, $hashed_password);
+    $stmt = $conn->prepare("SELECT password FROM users WHERE email = ?");
+    $stmt->bind_param("s", $email);
 
     // Execute the statement
-    if ($stmt->execute()) {
-        //echo "Registration successful!";
-        header("Location: Admin.html");
+    $stmt->execute();
+    $stmt->store_result();
+    
+    if ($stmt->num_rows > 0) {
+        // Bind result variables
+        $stmt->bind_result($hashed_password);
+        $stmt->fetch();
+
+        // Verify the password
+        if (password_verify($password, $hashed_password)) {
+            echo "Sign-in successful!";
+        } else {
+            echo "Invalid email or password.";
+        }
     } else {
-        echo "Error: " . $stmt->error;
+        echo "Invalid email or password.";
     }
 
     // Close the statement and connection

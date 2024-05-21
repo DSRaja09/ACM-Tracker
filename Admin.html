@@ -1,4 +1,3 @@
-<!-- Branch of Koushik -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +12,7 @@
     <h1>Set Contest</h1>
   </header>
   <main>
-    <form id="team-form">
+    <form action="admin.php" method="post" id="team-form">
       <label for="name-contest"> TFC Name:</label>
       <input type="text" id="name-contest" name="name-contest" required>
       <br>
@@ -24,10 +23,32 @@
         <div id="contest-labels"></div>
       </div>
       <br>
-      <a href="Dashboard.html">Submit</a>
+      <button type="submit">Submit</button>
     </form>
   </main>
-  <script src="AdminOnc.js"></script>
-</body>
+  <script>
+    function NumOfCon() {
+      const numLinks = document.getElementById("num-contests").value;
+      const container = document.getElementById("contest-labels");
+      container.innerHTML = ""; // Clear previous inputs
 
+      for (let i = 1; i <= numLinks; i++) {
+        const label = document.createElement("label");
+        label.setAttribute('for', `link-${i}`);
+        label.textContent = `Link ${i}:`;
+
+        const newInput = document.createElement("input");
+        newInput.type = "url"; // Set the input type to "url" for link input
+        newInput.id = `link-${i}`;
+        newInput.name = `contest-link-${i}`;
+        newInput.placeholder = `Link ${i}`;
+        newInput.required = true;
+
+        container.appendChild(label);
+        container.appendChild(newInput);
+        container.appendChild(document.createElement("br"));
+      }
+    }
+  </script>
+</body>
 </html>
