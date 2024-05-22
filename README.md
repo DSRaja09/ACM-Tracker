@@ -29,7 +29,7 @@ The ACM Tracker project is a part of our university's initiative to enhance stud
    ```sh
    git clone https://github.com/your-username/acm-tracker.git
    cd acm-tracker!
-## Imgaes
+## Images:
 ![FrontPage](https://github.com/DSRaja09/ACM-Tracker/assets/102921065/1435782f-5339-4f85-8e86-3780862b3aef)
 ![FrontPage 2](https://github.com/DSRaja09/ACM-Tracker/assets/102921065/c436720b-3522-499f-a1b0-3974145ce5dd)
 ![Participant](https://github.com/DSRaja09/ACM-Tracker/assets/102921065/265419ba-f957-4a74-b25b-cbb6b9218113)
