@@ -1,10 +1,14 @@
 <?php
+// Enable error reporting for debugging
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 // Parameters for database connection
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "acm_tracker"; // Ensure your database name is correct
+$dbname = "user_registration"; // Ensure your database name is correct
 
 // Create connection with the parameters
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -15,31 +19,38 @@ if ($conn->connect_error) {
 }
 
 // Check if POST variables are set
-if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password'])) {
+if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])) {
     // Retrieve user input from the form
-    $Username = $_POST['username'];
-    $Email = $_POST['email'];
-    $Password = $_POST['password'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT); // Hash the password
 
-    // Prepare SQL query to insert user data into the 'registration' table
-    $sql = "INSERT INTO registration (Username, Email, Password) VALUES (?, ?, ?)";
+    // Prepare SQL query to insert user data into the 'users' table
+    $sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
     
     // Prepare the statement
     $stmt = $conn->prepare($sql);
     if ($stmt) {
         // Bind parameters
-        $stmt->bind_param("sss", $Username, $Email, $Password);
+        $stmt->bind_param("sss", $name, $email, $password);
 
         // Execute the statement
-    if ($stmt->execute()) {
-        //echo "Registration successful!";
-        header("Location: Admin.html");
-    } else {
-        echo "Error: " . $stmt->error;
-    }
+        if ($stmt->execute()) {
+            // Registration successful, redirect to Admin.html
+            header("Location: Admin.html");
+            exit();
+        } else {
+            echo "Error executing statement: " . $stmt->error;
+        }
 
-    // Close the statement and connection
-    $stmt->close();
+        // Close the statement
+        $stmt->close();
+    } else {
+        echo "Error preparing statement: " . $conn->error;
+    }
+    // Close the connection
     $conn->close();
+} else {
+    echo "All fields are required.";
 }
 ?>

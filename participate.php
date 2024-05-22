@@ -4,52 +4,52 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Database configuration
-$host = 'localhost';
-$db = 'user_registration';
-$user = 'root';
-$pass = '';
-$charset = 'utf8mb4';
+// Parameters for database connection
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "user_registration";
 
-// DSN (Data Source Name)
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-];
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-try {
-    // Create a PDO instance
-    $pdo = new PDO($dsn, $user, $pass, $options);
-} catch (\PDOException $e) {
-    // Handle connection error
-    die('Connection failed: ' . $e->getMessage());
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
-// Check if the form is submitted
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Get form data
-<<<<<<< HEAD
+// Check if POST variables are set
+if (isset($_POST['name']) && isset($_POST['cf_handles'])) {
+    // Retrieve user input from the form
     $name = $_POST['name'];
     $cf_handles = $_POST['cf_handles'];
-=======
-    $Name = $_POST['Name'];
-    $cf_handles = $_POST['CF_handles'];
->>>>>>> 1c4c8b25c12ecb67589af62b5a00a9e6fa904907
 
-    // Insert form data into the database
-    try {
-        $sql = "INSERT INTO participants (name, cf_handles) VALUES (?, ?)";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([$name, $cf_handles]);
+    // Prepare SQL query to insert participant data into the 'participants' table
+    $sql = "INSERT INTO participants (name, cf_handles) VALUES (?, ?)";
+    
+    // Prepare the statement
+    $stmt = $conn->prepare($sql);
+    if ($stmt) {
+        // Bind parameters
+        $stmt->bind_param("ss", $name, $cf_handles);
 
-        // Redirect to a success page (or any other page)
-        header('Location: Dashboard.html');
-        exit();
-    } catch (\PDOException $e) {
-        // Handle insertion error
-        die('Insertion failed: ' . $e->getMessage());
+        // Execute the statement
+        if ($stmt->execute()) {
+            // Data insertion successful
+            header("Location: Dashboard.php"); // Redirect to the Dashboard or another page
+            exit();
+        } else {
+            echo "Error executing statement: " . $stmt->error;
+        }
+
+        // Close the statement
+        $stmt->close();
+    } else {
+        echo "Error preparing statement: " . $conn->error;
     }
+    // Close the connection
+    $conn->close();
+} else {
+    echo "All fields are required.";
 }
 ?>
