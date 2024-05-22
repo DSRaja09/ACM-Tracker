@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$tfcName, ...$links]);
 
-        header('Location: Dashboard.html');
+        header('Location: Dashboard.php');
         exit();
     } catch (\PDOException $e) {
         die('Insertion failed: ' . $e->getMessage());

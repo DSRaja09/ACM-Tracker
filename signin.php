@@ -1,8 +1,8 @@
 <?php
 // Database configuration
 $servername = "localhost";
-$username = "root"; // Your database username
-$password = ""; // Your database password
+$username = "root";
+$password = "";
 $dbname = "user_registration";
 
 // Create connection
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Prepare and bind
-    $stmt = $conn->prepare("SELECT password FROM users WHERE email = ?");
+    $stmt = $conn->prepare("SELECT name, email, password FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
 
     // Execute the statement
@@ -33,16 +33,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if ($stmt->num_rows > 0) {
         // Bind result variables
-        $stmt->bind_result($hashed_password);
+        $stmt->bind_result($name, $db_email, $hashed_password);
         $stmt->fetch();
 
         // Verify the password
         if (password_verify($password, $hashed_password)) {
-            echo "Sign-in successful!";
+            // Password is correct, redirect to the user page
+            header("Location: Admin.html");
+            exit();
         } else {
+            // Password is incorrect
             echo "Invalid email or password.";
         }
     } else {
+        // No user found with the provided email
         echo "Invalid email or password.";
     }
 

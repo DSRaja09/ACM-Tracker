@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
     <link rel="stylesheet" href="registration.css">
 </head>
-
 <body>
     <div class="container">
         <h1>Register as Admin</h1>
         <div class="form">
             <div class="options">
-                <form action="http://localhost/acm/registration.php" method="post">
-                    <input class="text" type="text" name="username" placeholder="Username" required>
+                <form action="register.php" method="post">
+                    <input class="text" type="text" name="name" placeholder="Name" required>
                     <input class="text email" type="email" name="email" placeholder="Email" required>
                     <input class="text" type="password" name="password" placeholder="Password" required>
                     <div class="Conditions">
@@ -26,7 +24,7 @@
                     </div>
                     <input type="submit" value="SIGNUP">
                 </form>
-                <p>Already have an Account? <a href="Admin.html"> Login Now!</a></p>
+                <p>Already have an Account? <a href="signin.html"> Login Now!</a></p>
             </div>
         </div>
         <!-- copyright -->
@@ -36,5 +34,4 @@
         <!-- //main -->
     </div>
 </body>
-
 </html>
